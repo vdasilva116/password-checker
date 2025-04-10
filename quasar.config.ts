@@ -46,7 +46,7 @@ export default defineConfig((/* ctx */) => {
         process.env.NODE_ENV === 'production'
           ? '/password-checker/' // GitHub Pages
           : '/', // Dev local
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,

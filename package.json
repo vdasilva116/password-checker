@@ -1,8 +1,8 @@
 {
   "name": "password-checker",
   "version": "0.0.1",
-  "description": "A Quasar Project",
-  "productName": "Quasar App",
+  "description": "A Quasar Project to check the strength of a password",
+  "productName": "Password checker",
   "author": "Vincent <vin--cent@hotmail.fr>",
   "type": "module",
   "private": true,

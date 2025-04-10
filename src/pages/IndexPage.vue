@@ -5,6 +5,12 @@
     style="min-height: 100vh"
   >
     <q-card class="q-pa-lg shadow-10" style="max-width: 500px; width: 100%">
+      <q-card-section align="center">
+        <q-avatar size="100px" class="bg-primary">
+          <q-img src="../assets/logo.png" alt="Logo" />
+        </q-avatar>
+      </q-card-section>
+
       <q-card-section>
         <div class="text-h5 text-primary">🔐 {{ t('title') }}</div>
         <div class="text-caption text-grey">{{ t('description') }}</div>
@@ -16,7 +22,6 @@
           v-model="password"
           :type="showPassword ? 'text' : 'password'"
           :label="t('enterPassword')"
-          :rules="[(val) => val.length >= 3 || t('minChar')]"
         >
           <template #append>
             <q-icon
@@ -28,7 +33,7 @@
           </template>
         </q-input>
 
-        <div v-if="password.length >= 3" class="q-mt-md">
+        <div v-if="password.length >= 1" class="q-mt-md">
           <q-linear-progress
             :value="score / 4"
             :color="progressColor"
@@ -154,7 +159,7 @@ const checkPwned = async (pwd: string) => {
 };
 
 watch(password, (val) => {
-  if (val.length >= 3) void checkPassword();
+  if (val.length >= 1) void checkPassword();
 });
 
 const strengthLabel = computed(() => {
